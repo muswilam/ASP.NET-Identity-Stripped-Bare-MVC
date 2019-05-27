@@ -33,9 +33,23 @@ namespace AuthenticationAppMVC.Controllers
             if(model.Email == "admin@admin.com" && model.Password == "password")
             {
                 var identity = new ClaimsIdentity(new[] {
-                    new Claim(ClaimTypes.Name, "Sully"),
+                    new Claim(ClaimTypes.Name, "Margret"),
                     new Claim(ClaimTypes.Email, "a@b.com"),
                     new Claim(ClaimTypes.Country, "England")
+                }, "ApplicationCookie");
+
+                var ctx = Request.GetOwinContext();
+                var authManager = ctx.Authentication;
+
+                authManager.SignIn(identity);
+
+                return Redirect(GetRedirectUrl(model.ReturnUrl));
+            }else if(model.Email == "sully@mail.com" && model.Password == "password")
+            {
+                var identity = new ClaimsIdentity(new[] {
+                    new Claim(ClaimTypes.Name, "Sully"),
+                    new Claim(ClaimTypes.Email, "jackswilam@gmail.com"),
+                    new Claim(ClaimTypes.Country, "Catalunia")
                 }, "ApplicationCookie");
 
                 var ctx = Request.GetOwinContext();
@@ -49,6 +63,15 @@ namespace AuthenticationAppMVC.Controllers
             // user auth Failed !! 
             ModelState.AddModelError("", "Invalid email or password");
             return View();
+        }
+
+        public ActionResult LogOut()
+        {
+            var ctx = Request.GetOwinContext();
+            var authManager = ctx.Authentication;
+
+            authManager.SignOut("ApplicationCookie");
+            return RedirectToAction("index", "home");
         }
 
         private string GetRedirectUrl(string returnUrl)

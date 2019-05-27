@@ -6,6 +6,9 @@
 <h2>Index</h2>
 
 <p>
-    Hello @User.Identity.Name
-    @User.Identity.IsAuthenticated
+    @Html.ActionLink("Log Out","logout","auth")
+</p>
+
+<p>
+    @CurrentUser.Name from @CurrentUser.Country 
 </p>
