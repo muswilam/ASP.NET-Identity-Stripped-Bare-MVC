@@ -25,3 +25,11 @@ C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAp
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\obj\Debug\AuthenticationAppMVC.csprojResolveAssemblyReference.cache
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\obj\Debug\AuthenticationAppMVC.dll
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\obj\Debug\AuthenticationAppMVC.pdb
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\EntityFramework.dll
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\EntityFramework.SqlServer.dll
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\EntityFramework.xml
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\EntityFramework.SqlServer.xml
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml

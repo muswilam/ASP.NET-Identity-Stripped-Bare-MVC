@@ -1,16 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AuthenticationAppMVC.Models;
 using System.Security.Claims;
+using Microsoft.AspNet.Identity;
+using System.Threading.Tasks;
+using Microsoft.Owin.Security;
 
 namespace AuthenticationAppMVC.Controllers
 {
     [AllowAnonymous] // necessary so people can log in 
     public class AuthController : Controller
     {
+        private readonly UserManager<AppUser> userManager;
+
+        public AuthController()
+            : this (Startup.UserManagerFactory.Invoke())
+        {
+
+        }
+
+        public AuthController(UserManager<AppUser> userManager)
+        {
+            this.userManager = userManager;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if(disposing && userManager != null)
+            {
+                userManager.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
         [HttpGet]
         public ActionResult LogIn(string returUrl)
         {
@@ -22,40 +45,21 @@ namespace AuthenticationAppMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult LogIn(LogInModel model)
+        public async Task<ActionResult> LogIn(LogInModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View();
             }
 
-            //don't do this in production , just for tutorial 
-            if(model.Email == "admin@admin.com" && model.Password == "password")
+            var user = await userManager.FindAsync(model.Email, model.Password);
+
+            if(user != null)
             {
-                var identity = new ClaimsIdentity(new[] {
-                    new Claim(ClaimTypes.Name, "Margret"),
-                    new Claim(ClaimTypes.Email, "a@b.com"),
-                    new Claim(ClaimTypes.Country, "England")
-                }, "ApplicationCookie");
+                var identity = await userManager.CreateIdentityAsync(
+                    user, DefaultAuthenticationTypes.ApplicationCookie);
 
-                var ctx = Request.GetOwinContext();
-                var authManager = ctx.Authentication;
-
-                authManager.SignIn(identity);
-
-                return Redirect(GetRedirectUrl(model.ReturnUrl));
-            }else if(model.Email == "sully@mail.com" && model.Password == "password")
-            {
-                var identity = new ClaimsIdentity(new[] {
-                    new Claim(ClaimTypes.Name, "Sully"),
-                    new Claim(ClaimTypes.Email, "jackswilam@gmail.com"),
-                    new Claim(ClaimTypes.Country, "Catalunia")
-                }, "ApplicationCookie");
-
-                var ctx = Request.GetOwinContext();
-                var authManager = ctx.Authentication;
-
-                authManager.SignIn(identity);
+                GetAuthenticationManager().SignIn(identity);
 
                 return Redirect(GetRedirectUrl(model.ReturnUrl));
             }
@@ -63,6 +67,12 @@ namespace AuthenticationAppMVC.Controllers
             // user auth Failed !! 
             ModelState.AddModelError("", "Invalid email or password");
             return View();
+        }
+
+        private IAuthenticationManager GetAuthenticationManager()
+        {
+            var ctx = Request.GetOwinContext();
+            return ctx.Authentication;
         }
 
         public ActionResult LogOut()
