@@ -1,14 +1,14 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Log Out","logout","auth")
+    @Html.ActionLink("Log Out", "logout", "auth")
 </p>
 
 <p>
-    @CurrentUser.Name from @CurrentUser.Country  
+    @CurrentUser.Name from @CurrentUser.Country <br />
+    Contact : @CurrentUser.MobilePhone
 </p>

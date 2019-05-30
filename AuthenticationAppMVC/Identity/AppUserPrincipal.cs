@@ -28,5 +28,13 @@ namespace AuthenticationAppMVC
                 return this.FindFirst(ClaimTypes.Country).Value;
             }
         }
+
+        public string MobilePhone
+        {
+            get
+            {
+                return this.FindFirst(ClaimTypes.MobilePhone).Value;
+            }
+        }
     }
 }

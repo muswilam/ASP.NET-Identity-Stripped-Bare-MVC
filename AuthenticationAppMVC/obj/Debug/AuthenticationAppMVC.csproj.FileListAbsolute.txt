@@ -33,3 +33,5 @@ C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAp
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\EntityFramework.SqlServer.xml
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\obj\Debug\AuthenticationAppMVC.Migrations.AddMobilePhoneProperty.resources
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\MVC Cource\AuthenticationAppMVC\AuthenticationAppMVC\obj\Debug\AuthenticationAppMVC.csproj.GenerateResource.Cache

@@ -6,5 +6,6 @@ namespace AuthenticationAppMVC
     {
         public string Country { get; set; }
         public int Age { get; set; }
+        public string MobilePhone { get; set; }
     }
 }

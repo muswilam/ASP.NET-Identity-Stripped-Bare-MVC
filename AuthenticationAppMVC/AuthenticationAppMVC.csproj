@@ -139,6 +139,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905301532133_AddMobilePhoneProperty.cs" />
+    <Compile Include="Migrations\201905301532133_AddMobilePhoneProperty.Designer.cs">
+      <DependentUpon>201905301532133_AddMobilePhoneProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Identity\AppUserClaimsIdentityFactory.cs" />
     <Compile Include="ViewModels\LogInModel.cs" />
@@ -173,6 +177,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\App\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905301532133_AddMobilePhoneProperty.resx">
+      <DependentUpon>201905301532133_AddMobilePhoneProperty.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

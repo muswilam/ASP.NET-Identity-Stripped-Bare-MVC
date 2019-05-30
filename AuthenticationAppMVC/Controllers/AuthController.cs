@@ -86,7 +86,8 @@ namespace AuthenticationAppMVC.Controllers
             {
                 UserName = model.Email,
                 Country = model.Country,
-                Age = model.Age
+                Age = model.Age,
+                MobilePhone = model.MobilePhone
             };
 
             var result = await userManager.CreateAsync(user, model.Password);

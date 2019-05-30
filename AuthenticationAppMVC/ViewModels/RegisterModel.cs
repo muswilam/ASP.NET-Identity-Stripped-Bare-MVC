@@ -18,5 +18,7 @@ namespace AuthenticationAppMVC.ViewModels
         [Required]
         public int Age { get; set; }
 
+        [DataType(DataType.PhoneNumber)]
+        public string MobilePhone { get; set; }
     }
 }
