@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace AuthenticationAppMVC.Models
+namespace AuthenticationAppMVC.ViewModels
 {
     public class LogInModel
     {

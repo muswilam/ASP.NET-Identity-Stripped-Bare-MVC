@@ -31,6 +31,10 @@ namespace AuthenticationAppMVC
                 {
                     AllowOnlyAlphanumericUserNames = false
                 };
+
+                // use out custom claims provider
+                userManager.ClaimsIdentityFactory = new AppUserClaimsIdentityFactory();
+
                 return userManager;
             };
         }
